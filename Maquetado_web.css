@@ -1,0 +1,35 @@
+.header {
+	display: flex;
+    justify-content: space-between;
+    margin: 100px;
+}
+
+.principal {
+	border-width: 2px;
+	border-color: lightseagreen;
+	border-style: double;	
+	margin: 50px 100px 50px 100px;
+	padding: 10px;
+}
+
+.individual {
+	border: 2px darksalmon solid;
+	margin: 10px;
+}
+
+.individual * {
+	margin: 10px;
+}
+
+.título {
+	color: darkslategrey;
+	margin: 5px;
+}
+
+.costado {
+	display: inline-block;
+}
+
+.imagen {
+	vertical-align: middle;
+}
