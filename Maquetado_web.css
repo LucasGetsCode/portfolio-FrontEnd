@@ -1,19 +1,42 @@
 .header {
 	display: flex;
     justify-content: space-between;
-    margin: 100px;
+    margin: 0px 50px 5px 50px;
+    background-color: darkgrey;
+    border-radius: 0px 0px 10px 10px;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.login {
+	background-color: lightgrey;
+	color: deeppink;
+	border: hotpink 2px solid;
+	border-radius: 5px;
+	padding: 4px 10px;
+	margin-left: 15px;
+}
+
+.banner {
+	display: block;
+	margin: auto;
+	border: 1px gray solid;
+	width: 85%;
+	height: 400px; 
 }
 
 .principal {
 	border-width: 2px;
-	border-color: lightseagreen;
-	border-style: double;	
-	margin: 50px 100px 50px 100px;
+	border-color: gray;
+	border-style: double;
+	border-radius: 30px;
+	margin: 40px 100px;
 	padding: 10px;
 }
 
 .individual {
-	border: 2px darksalmon solid;
+	border: 2px lightgrey solid;
+	border-radius: 10px;
 	margin: 10px;
 }
 
@@ -21,7 +44,7 @@
 	margin: 10px;
 }
 
-.título {
+.titulo {
 	color: darkslategrey;
 	margin: 5px;
 }
@@ -31,5 +54,7 @@
 }
 
 .imagen {
-	vertical-align: middle;
+	vertical-align: sub;
+	margin-bottom: auto;
+	margin-top: auto;
 }
