@@ -1,1 +1,26 @@
-<p>header works!</p>
+<div class="header">
+	<div class="costado" >
+		<a routerLink="home" routerLinkActive="active"><img src="assets/Lucas_logo.png" width="50" height="50" alt="Logo" class="imagen" title="Home"></a>
+		<strong class="social" style="vertical-align: 40%; color:white;">Lucas Pujia</strong>
+	</div>
+	<a href="https://argentinaprograma.inti.gob.ar/" class="costado">
+		<img src="../assets/LogosInti.png" alt="Argentina Programa logo" height='40'>
+		<h3 class="costado" style="vertical-align: 20%; margin-left: 5px;">#YoProgramo</h3>
+	</a>
+
+	<div class="costado">
+		<a href="https://www.instagram.com" title="Instagram"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" width='25' height='25' class="social" alt="Instagram-logo"></a>
+
+		<a href="https://www.twitter.com" title="Twitter"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png" width='25' height='25' class="social" alt="Twitter-logo"></a>
+
+		<a href="https://web.telegram.org/" title="Telegram"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/1200px-Telegram_2019_Logo.svg.png" width='25' height='25' class="social" alt="Telegram-logo"></a>
+
+		<a href="https://github.com/" title="GitHub"><img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width='25' height='25' class="social" alt="GitHub-logo"></a>
+
+		<a href="https://ar.linkedin.com/" title="LinkedIn"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" width='25' height='25' class="social" alt="LinkeIn-logo"></a>
+		
+		<a routerLink="profile" routerLinkActive="active" class="costado login" *ngIf="AuthService.logIn" title="Click para ir al perfil">Profile</a>
+		<a (click)="AuthService.logout()" href="#" class="costado login" *ngIf="AuthService.logIn" title="Click para cerrar sesión">Cerrar Sesión</a>
+		<a routerLink="login" routerLinkActive="active" class="costado login" *ngIf="!AuthService.logIn" title="Click para iniciar sesión">Login</a>
+	</div>
+</div>
