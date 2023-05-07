@@ -4,11 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Error404Component } from './error404/error404.component';
+import { InfoComponent } from './info/info.component';
+import { LoginComponent } from './login/login.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
+import { TitleComponent } from './title/title.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Error404Component
+    Error404Component,
+    InfoComponent,
+    LoginComponent,
+    FooterComponent,
+    HeaderComponent,
+    TitleComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
