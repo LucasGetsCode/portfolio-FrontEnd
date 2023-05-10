@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-info',
@@ -9,6 +9,7 @@ export class InfoComponent implements OnInit {
   @Input () text: string = "";
   @Input () title: string = "Ramón";
   @Input () color: string = "";
+  @Output () btnClick = new EventEmitter();
 
 
   contructor() {}
@@ -17,6 +18,7 @@ export class InfoComponent implements OnInit {
   }
 
   onClick(){
-    console.log("Click de " + this.title)
+    console.log("Click de " + this.title); /* Esto es una función local, funciona dentro del info.component */
+    this.btnClick.emit(); /* Esto es una función externa, llama a una función en otro componente, */
   }
 }
