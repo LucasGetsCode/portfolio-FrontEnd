@@ -1,1 +1,5 @@
-<p>info works!</p>
+<p [ngStyle]="{'color': color}">{{text}} {{title}}</p>
+
+<section *ngIf="title == 'Pepe'"><p>Soy Pepe</p></section>
+
+<button (click)="onClick()">{{title}}</button>
