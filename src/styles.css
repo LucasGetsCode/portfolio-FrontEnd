@@ -1,1 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*@import "assets/reset.css";*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.social {
+	margin: 2px;
+	vertical-align: -20%;
+}
+
+
+.banner {
+	display: block;
+	margin: auto;
+	border: 1px gray solid;
+	width: 85%;
+	height: 400px; 
+}
+
+.principal {
+	border-width: 2px;
+	border-color: gray;
+	border-style: double;
+	border-radius: 30px;
+	margin: 40px 100px;
+	padding: 10px;
+}
+
+.individual {
+	border: 2px lightgrey solid;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.individual * {
+	margin: 10px;
+}
+
+.titulo {
+	color: darkslategrey;
+	margin: 5px;
+}
+
+.costado {
+	display: inline-block;
+	align-items: baseline;
+	vertical-align: center;
+}
+
+.vertical {
+	display: flex;
+    	align-items: center;
+    	justify-content: center;
+    	flex-direction: column; /* Las cosas dentro del div se alinean verticalmente, como una columna */
+   	text-align: center; /* Texto centrado  */
+}
+
+.imagen {
+	vertical-align: sub;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+h3 {
+	margin: 0px;
+	font-weight: 500;
+	font-size: 28px;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.font {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";		
+}
+
+body {
+	margin: 0 8px 0px 8px;
+	font-size: 1.33em;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}

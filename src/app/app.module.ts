@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { TitleComponent } from './title/title.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     FooterComponent,
     HeaderComponent,
     TitleComponent,
-    PerfilComponent
+    PerfilComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

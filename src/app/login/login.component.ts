@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   constructor (private authService: AuthService, private formBuilder: FormBuilder, private titleService: Title) {
     this.titleService.setTitle("Iniciar Sesión - Lucas Pujia");
-    //Creamos el grupo de controles para el formulario de login
+    // Creamos el grupo de controles para el formulario de login
     this.form = this.formBuilder.group({
       username: ['',[Validators.required, Validators.minLength(this.username_min), Validators.maxLength(this.username_max)]],
       password: ['',[Validators.required, Validators.minLength(8)]]/*,
@@ -53,13 +53,13 @@ export class LoginComponent implements OnInit {
     this.logged = false;
 
     if (this.form.valid) {
-      console.log(this.form.value)
+      //console.log(this.form.value)
       alert("Todo salio bien ¡Enviar formuario!")
       // Llamamos a nuestro servicio para enviar los datos al servidor
       // También podríamos ejecutar alguna lógica extra
       this.logged = true;
     } else {
-      console.log("Mal")
+      //console.log("Mal")
       console.log(this.form.value)
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template
       this.form.markAllAsTouched();

@@ -1,0 +1,17 @@
+.profile-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Las cosas dentro del div se alinean verticalmente, como una columna */
+    text-align: center; /* Texto centrado  */
+  }
+
+  /* Center the title horizontally */
+h2 {
+  text-align: center;
+}
+
+p {
+  margin-top: 5px;
+  margin-bottom: 5px
+}
