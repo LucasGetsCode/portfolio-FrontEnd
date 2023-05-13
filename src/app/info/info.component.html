@@ -1,5 +1,19 @@
-<p [ngStyle]="{'color': color}">{{text}} {{title}}</p>
+<div>
+    <div class="costados">
+        <h3 [ngStyle]="{'color': color}" *ngIf="!editable">{{titulo}}</h3>
+        <input [(ngModel)]="titulo" *ngIf="editable">
 
-<section *ngIf="title == 'Pepe'"><p>Soy Pepe</p></section>
+        <p class="botones" *ngIf="!editable"><span>{{fechaInicio}}</span> - <span>{{fechaFin}}</span></p>
+        <p class="botones" *ngIf="editable"><input [(ngModel)]="fechaInicio" > - <input [(ngModel)]="fechaFin"></p>
+        <div class="botones" *ngIf="logged">
+            <button (click)="onClickEdit()" spellcheck="false" *ngIf="!editable">Edit</button>
+            <button (click)="onClickEdit()" spellcheck="false" *ngIf="editable">Confirmar</button> 
 
-<button (click)="onClick()">{{title}}</button>
+            <button (click)="onClickDelete()" spellcheck="false" *ngIf="!borrar">Borrar</button>
+            <button (click)="onClickDelete()" spellcheck="false" *ngIf="borrar">Confirmar</button>
+        </div>
+    </div>
+
+    <p id="info" *ngIf="!editable">{{text}}</p>
+    <input id="info" [(ngModel)]="text" *ngIf="editable">
+</div>

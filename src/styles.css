@@ -46,8 +46,8 @@ main {
 }
 
 .titulo {
-	color: darkslategrey;
-	margin: 5px;
+	color:  black;
+	margin: 0px 50px;
 }
 
 .costado {
@@ -58,9 +58,9 @@ main {
 
 .vertical {
 	display: flex;
-    	align-items: center;
-    	justify-content: center;
-    	flex-direction: column; /* Las cosas dentro del div se alinean verticalmente, como una columna */
+	align-items: center;
+	justify-content: center;
+	flex-direction: column; /* Las cosas dentro del div se alinean verticalmente, como una columna */
    	text-align: center; /* Texto centrado  */
 }
 

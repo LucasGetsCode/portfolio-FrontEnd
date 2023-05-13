@@ -1,0 +1,15 @@
+.costados {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    /* flex-direction: row; */
+    margin-top: -25px;
+    margin-bottom: 0px; 
+}
+.botones{
+    margin-left: auto;
+}
+
+#info {
+    margin-bottom: -20px;
+}

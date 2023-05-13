@@ -2,13 +2,52 @@
 <div class="principal">
     <app-perfil></app-perfil>
 </div>
-<div class="principal">
-    <app-info text="Hola" title="Pepe"></app-info>
-</div>
-<div class="principal">
-    <app-info text="Hola" title="Juan" color="red"></app-info>
+
+<div class="principal" id="experiencia">
+    <h2 class="titulo">Experiencia</h2>
+    <div class="individual" *ngFor="let dato of experiencia">
+        <app-info
+        id={{dato.id}}
+        categoria={{dato.categoria}}
+        text={{dato.info}}
+        titulo={{dato.titulo}}
+        fechaInicio={{dato.fechaInicio}}
+        fechaFin={{dato.fechaFin}}
+        (btnClickDelete)="eliminar(dato.id)"
+        (btnClickEdit)="editar()"></app-info>
+    </div>
+    <button *ngIf="logged" class="individual" (click)="agregar('experiencia')">Agregar experiencia</button>
+    <button *ngIf="logged" class="individual" (click)="buscar(3)">Buscar 3</button>
 </div>
 
-<div class="principal">
-    <app-info text="Hola" color="red" (btnClick)="toggleAddTask()"></app-info>
+<div class="principal" id="educacion">
+    <h2 class="titulo">Educación</h2>
+    <div class="individual" *ngFor="let dato of educacion">
+        <app-info
+        id={{dato.id}}
+        categoria={{dato.categoria}}
+        text={{dato.info}}
+        titulo={{dato.titulo}}
+        fechaInicio={{dato.fechaInicio}}
+        fechaFin={{dato.fechaFin}}
+        (btnClickDelete)="eliminar(dato.id)"
+        (btnClickEdit)="editar()"></app-info>
+    </div>
+    <button *ngIf="logged" class="individual" (click)="agregar('educacion')">Agregar educación</button>
+</div>
+
+<div class="principal" id="proyectos">
+    <h2 class="titulo">Proyectos</h2>
+    <div class="individual" *ngFor="let dato of proyectos">
+        <app-info
+        id={{dato.id}}
+        categoria={{dato.categoria}}
+        text={{dato.info}}
+        titulo={{dato.titulo}}
+        fechaInicio={{dato.fechaInicio}}
+        fechaFin={{dato.fechaFin}}
+        (btnClickDelete)="eliminar(dato.id)"
+        (btnClickEdit)="editar()"></app-info>
+    </div>
+    <button *ngIf="logged" class="individual" (click)="agregar('proyectos')">Agregar proyectos</button>
 </div>
