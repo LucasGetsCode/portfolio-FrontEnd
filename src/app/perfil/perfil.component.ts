@@ -18,7 +18,7 @@ export class PerfilComponent implements OnInit {
 
   id: string = "";
   categoria: string = "perfil";
-  info: string = "No se estaría cargando la base de datos o el backend. Disculpe las molestias";
+  info: string = "Se están cargando los datos, por favor espere. Si no se cargan significa que no se está accediendo correctamente a la base de datos. Disculpe las molestias";
   nombre: string = "Lucas Pujia";
   titulo: string = "Full stack developer Jr.";
   foto: string = "../assets/FotoPerfil.jpg";

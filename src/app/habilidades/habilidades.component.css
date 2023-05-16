@@ -1,3 +1,9 @@
 .multiline {
     white-space: pre-wrap;
 }
+
+.estrellas {
+	display: inline-block;
+	align-items: baseline;
+	vertical-align: center;
+}
