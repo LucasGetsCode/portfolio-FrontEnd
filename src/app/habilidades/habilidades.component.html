@@ -9,9 +9,6 @@
         </div>
         <input [(ngModel)]="puntuacion" *ngIf="editable">
         
-
-        <p class="botones" *ngIf="!editable"><span>{{fechaInicio}}</span> - <span>{{fechaFin}}</span></p>
-        <p class="botones" *ngIf="editable"><input [(ngModel)]="fechaInicio" > - <input [(ngModel)]="fechaFin"></p>
         <div class="botones" *ngIf="logged">
             <button (click)="onClickEdit()" spellcheck="false" *ngIf="!editable">Edit</button>
             <button (click)="onClickEdit()" spellcheck="false" *ngIf="editable">Confirmar</button> 
@@ -20,7 +17,4 @@
             <button (click)="onClickDelete()" spellcheck="false" *ngIf="borrar">Confirmar</button>
         </div>
     </div>
-
-    <p id="info" *ngIf="!editable" class="multiline">{{puntuacion}}</p>
-    <textarea id="info" [(ngModel)]="puntuacion" *ngIf="editable" cols="100" rows="5" class="font">{{puntuacion}}</textarea>
 </div>
