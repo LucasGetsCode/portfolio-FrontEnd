@@ -84,6 +84,7 @@ export class HomeComponent implements OnInit {
       this.creando = true;
       console.log("Hola, estás en " + categoria)
       const nuevoPost = {'id':0,'categoria':categoria, 'titulo':'Título', 'fechaInicio':'Fecha de inicio', 'fechaFin': 'Fecha de finalización', 'info':'Información adicional'}
+      if (categoria == "habilidades") { nuevoPost.info = "3" }
       this.apiService.agregarPost(nuevoPost).subscribe((id: Number) => {
         console.log("Dentro del agregar post:")
         console.log("Viejo post.id: " + nuevoPost.id)
