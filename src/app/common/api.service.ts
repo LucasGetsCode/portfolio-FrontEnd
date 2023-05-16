@@ -8,22 +8,26 @@ import { ManejarDatos } from '../home/manejarDatos';
 })
 export class ApiService {
 
-  private baseUrl = "http://localhost:8080";
-
+  // private baseUrl = "http://localhost:8080";
+  private baseUrl = "https://springboot3-u4hn.onrender.com";
   constructor(private http: HttpClient) { }
 
   getDatos(): Observable<ManejarDatos[]>{
     return this.http.get<ManejarDatos[]>(this.baseUrl + "/datos/traer");
   }
 
-  eliminarId(id: number): Observable<Object>{
-    console.log("Hola");
-    return this.http.delete(this.baseUrl + "/datos/borrar/" + id);
+  getUltimoDato(): Observable<ManejarDatos>{
+    return this.http.get<ManejarDatos>(this.baseUrl + "/datos/traer/ultimo");
   }
 
-  agregarPost(datos: ManejarDatos): Observable<Object> {
+  eliminarId(id: number): Observable<Object>{
+    console.log("Hola");
+    return this.http.delete<Object>(this.baseUrl + "/datos/borrar/" + id);
+  }
+
+  agregarPost(datos: ManejarDatos): Observable<Number> {
     console.log("Se ha agregado el post con éxito");
-    return this.http.post<Object>(this.baseUrl + "/datos/crear", datos);    
+    return this.http.post<Number>(this.baseUrl + "/datos/crear", datos);    
   }
 
   buscarId(id: number): Observable<ManejarDatos[]> {

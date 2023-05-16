@@ -14,6 +14,7 @@ import { TitleComponent } from './title/title.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { HomeComponent } from './home/home.component';
 import { EditComponent } from './edit/edit.component';
+import { HabilidadesComponent } from './habilidades/habilidades.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditComponent } from './edit/edit.component';
     TitleComponent,
     PerfilComponent,
     HomeComponent,
-    EditComponent
+    EditComponent,
+    HabilidadesComponent
   ],
   imports: [
     BrowserModule,

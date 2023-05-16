@@ -4,17 +4,16 @@ import { ApiService } from '../common/api.service';
 import { ManejarDatos } from '../home/manejarDatos';
 
 @Component({
-  selector: 'app-info',
-  templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css'],
-  providers: [AuthService, ApiService]
+  selector: 'app-habilidades',
+  templateUrl: './habilidades.component.html',
+  styleUrls: ['./habilidades.component.css']
 })
 
-export class InfoComponent implements OnInit {
+export class HabilidadesComponent implements OnInit {
 
   @Input () id: string = "";
   @Input () categoria: string = "";
-  @Input () text: string = "";
+  @Input () puntuacion: string = "";
   @Input () titulo: string = "Ramón";
   @Input () fechaInicio: string = "";
   @Input () fechaFin: string = "";
@@ -43,7 +42,7 @@ export class InfoComponent implements OnInit {
     if (!this.editable) {
       this.btnClickEdit.emit("hola"); /* Esto es una función externa, llama a una función en otro componente, */
       console.log("Ha editado a " + this.titulo + " con éxito");
-      this.apiService.editarId(this.id, this.categoria, this.titulo, this.fechaInicio, this.fechaFin, this.text)
+      this.apiService.editarId(this.id, this.categoria, this.titulo, this.fechaInicio, this.fechaFin, this.puntuacion)
     } else {
       console.log("Ahora está editando " + this.titulo);
     }

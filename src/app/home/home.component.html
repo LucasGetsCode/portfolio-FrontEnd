@@ -1,4 +1,10 @@
-<img src="assets/Lucas_logo.png" class="banner" alt="Banner" align="center">
+<!-- <img src="assets/Lucas_logo.png" class="banner" alt="Banner" align="center"> -->
+<img src={{banner.titulo}} class="banner" alt="Banner" align="center">
+<div class="banner-edit">
+    <input [(ngModel)]="banner.titulo" *ngIf="editable && logged" size="100">
+    <button (click)="editar()" spellcheck="false" *ngIf="!editable && logged">Editar banner</button>
+    <button (click)="editar()" spellcheck="false" *ngIf="editable && logged">Confirmar</button> 
+</div>
 <div class="principal">
     <app-perfil></app-perfil>
 </div>
@@ -16,8 +22,8 @@
         (btnClickDelete)="eliminar(dato.id)"
         (btnClickEdit)="editar()"></app-info>
     </div>
-    <button *ngIf="logged" class="individual" (click)="agregar('experiencia')">Agregar experiencia</button>
-    <button *ngIf="logged" class="individual" (click)="buscar(3)">Buscar 3</button>
+    <button *ngIf="logged && !creando" class="individual" (click)="agregar('experiencia')">Agregar experiencia</button>
+    <button *ngIf="logged && creando" class="individual">Agregando post</button>
 </div>
 
 <div class="principal" id="educacion">
@@ -33,7 +39,8 @@
         (btnClickDelete)="eliminar(dato.id)"
         (btnClickEdit)="editar()"></app-info>
     </div>
-    <button *ngIf="logged" class="individual" (click)="agregar('educacion')">Agregar educación</button>
+    <button *ngIf="logged && !creando" class="individual" (click)="agregar('educacion')">Agregar educación</button>
+    <button *ngIf="logged && creando" class="individual">Agregando post</button>
 </div>
 
 <div class="principal" id="proyectos">
@@ -49,5 +56,23 @@
         (btnClickDelete)="eliminar(dato.id)"
         (btnClickEdit)="editar()"></app-info>
     </div>
-    <button *ngIf="logged" class="individual" (click)="agregar('proyectos')">Agregar proyectos</button>
+    <button *ngIf="logged && !creando" class="individual" (click)="agregar('proyectos')">Agregar proyectos</button>
+    <button *ngIf="logged && creando" class="individual">Agregando post</button>
+</div>
+
+<div class="principal" id="habilidades">
+    <h2 class="titulo">Habilidades</h2>
+    <div class="individual" *ngFor="let dato of habilidades">
+        <app-habilidades
+        id={{dato.id}}
+        categoria={{dato.categoria}}
+        puntuacion={{dato.info}}
+        titulo={{dato.titulo}}
+        fechaInicio={{dato.fechaInicio}}
+        fechaFin={{dato.fechaFin}}
+        (btnClickDelete)="eliminar(dato.id)"
+        (btnClickEdit)="editar()"></app-habilidades>
+    </div>
+    <button *ngIf="logged && !creando" class="individual" (click)="agregar('habilidades')">Agregar habilidades</button>
+    <button *ngIf="logged && creando" class="individual">Agregando post</button>
 </div>

@@ -6,6 +6,20 @@
     text-align: center; /* Texto centrado  */
   }
 
+  .imagen {
+    width:250px;
+    height:250px;
+    border-radius: 50%;
+    border: 2px solid darkgray;
+  }
+
+.botones {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+
   /* Center the title horizontally */
 h2 {
   text-align: center;
@@ -16,6 +30,20 @@ p {
   margin-bottom: 5px
 }
 
-#titulo {
+.titulo {
+  margin-left: auto;
   font-size: 20px;
+}
+
+.costados {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  /* flex-direction: row; */
+  margin-top: -25px;
+  margin-bottom: 0px; 
+}
+
+.nombre {
+  flex: 1 0 auto;
 }

@@ -19,9 +19,17 @@ export class HomeComponent implements OnInit {
 
     educacion: ManejarDatos[] = []; // EDUCACION;
 
-    proyectos: ManejarDatos[] = []; //PROYECTOS;
+    proyectos: ManejarDatos[] = []; // PROYECTOS;
+
+    habilidades: ManejarDatos[] = []; // HABILIDADES;
+
+
+    banner: ManejarDatos = <ManejarDatos>{};
 
     logged: boolean = true;
+
+    creando: boolean = false;
+    editable: boolean = false;
 
     /*constructor(private http: HttpClient) {
       http.get('personas/traer').subscribe(data => this.greeting = data);
@@ -41,33 +49,52 @@ export class HomeComponent implements OnInit {
         this.experiencia = this.datos.filter(cosa => cosa.categoria == "experiencia");
         this.educacion = this.datos.filter(cosa => cosa.categoria == "educacion");
         this.proyectos = this.datos.filter(cosa => cosa.categoria == "proyectos");
+        this.habilidades = this.datos.filter(cosa => cosa.categoria == "habilidades");
+        this.banner = this.datos.filter(cosa => cosa.categoria == "banner")[0];
       });
     }
 
-    
-
-    editar(){
-      console.log("Estás editando con éxito");
+    editar(): void{
+      this.editable = !this.editable;
+      if (!this.editable) {
+        console.log("Ha editado el banner con éxito");
+        this.apiService.editarId(this.banner.id.toString(), this.banner.categoria, this.banner.titulo, "", "", "")
+      } else {
+        console.log("Ahora está editando el banner");
+      }
     }
 
     eliminar(id: number): void{
       //console.log("Has eliminado con éxito" + id);
+      console.log(this.datos)
+      console.log(id)
+      this.datos = this.datos.filter(post => post.id != id);
       this.apiService.eliminarId(id).subscribe();
+      this.actualizarDatos();
     }
 
     actualizarDatos(): void {
-      this.experiencia = this.datos.filter(cosa => cosa.categoria == "experiencia");
-      this.educacion = this.datos.filter(cosa => cosa.categoria == "educacion");
-      this.proyectos = this.datos.filter(cosa => cosa.categoria == "proyectos")
+      this.experiencia = this.datos.filter(post => post.categoria == "experiencia");
+      this.educacion = this.datos.filter(post => post.categoria == "educacion");
+      this.proyectos = this.datos.filter(post => post.categoria == "proyectos")
+      this.habilidades = this.datos.filter(cosa => cosa.categoria == "habilidades");
     }
 
     agregar(categoria: string): void{
+      this.creando = true;
       console.log("Hola, estás en " + categoria)
       const nuevoPost = {'id':0,'categoria':categoria, 'titulo':'Título', 'fechaInicio':'Fecha de inicio', 'fechaFin': 'Fecha de finalización', 'info':'Información adicional'}
-      this.datos.push(nuevoPost)
-      this.apiService.agregarPost(nuevoPost).subscribe()
-      this.actualizarDatos()
-      console.log(this.datos)
+      this.apiService.agregarPost(nuevoPost).subscribe((id: Number) => {
+        console.log("Dentro del agregar post:")
+        console.log("Viejo post.id: " + nuevoPost.id)
+        nuevoPost.id = Number(id)
+        console.log("Actualizado: " + nuevoPost.id)
+        this.datos.push(nuevoPost)
+        this.actualizarDatos()
+        console.log(this.datos)
+        this.creando = false;
+      })
+      
     }
 
     buscar(id: number) {
