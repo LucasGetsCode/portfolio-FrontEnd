@@ -3,11 +3,16 @@
         <h3 [ngStyle]="{'color': color}" *ngIf="!editable">{{titulo}}</h3>
         <input [(ngModel)]="titulo" *ngIf="editable">
 
-        <div class="estrellas" *ngFor="let numero of [1,2,3,4,5]">
-            <span *ngIf="(puntuacion) >= numero.toString()">★</span>
-            <span *ngIf="(puntuacion) < numero.toString()">☆</span>
+        <div class="costado">
+            <!-- <img src="../assets/menos.png" width="30" height="30" onclick="cambiarPuntuacion('menos')" *ngIf="logged"/> -->
+            <button class="boton-hab" *ngIf="logged" (click)="cambiarPuntuacion('menos')"><img class="imagen-hab" src="../assets/menos.png" width="30" height="30"/></button>
+            <div class="estrellas" *ngFor="let numero of [1,2,3,4,5]">
+                <span *ngIf="(puntuacion) >= numero.toString()">★</span>
+                <span *ngIf="(puntuacion) < numero.toString()">☆</span>
+            </div>
+            <button class="boton-hab" *ngIf="logged" (click)="cambiarPuntuacion('mas')"><img class="imagen-hab" src="../assets/mas.png" width="30" height="30"/></button>
+            <!-- <img src="../assets/mas.png" width="30" height="30" onclick="cambiarPuntuacion('mas')" *ngIf="logged"/> -->
         </div>
-        <input [(ngModel)]="puntuacion" *ngIf="editable">
         
         <div class="botones" *ngIf="logged">
             <button (click)="onClickEdit()" spellcheck="false" *ngIf="!editable">Edit</button>

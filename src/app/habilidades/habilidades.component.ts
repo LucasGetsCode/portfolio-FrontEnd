@@ -57,4 +57,16 @@ export class HabilidadesComponent implements OnInit {
       console.log("Quieres eliminar a "+ this.titulo + "?");
     }
   }
+
+  cambiarPuntuacion(signo: string) {
+    if (signo=="menos") {
+      this.puntuacion = (parseInt(this.puntuacion) - 1).toString()
+      if (this.puntuacion < "0") { this.puntuacion = "0" }
+      console.log("Ha editado a " + this.titulo + " con éxito");
+    } else {
+      this.puntuacion = (parseInt(this.puntuacion) + 1).toString()
+      if (this.puntuacion > "5") { this.puntuacion = "5" }
+    }
+    this.apiService.editarId(this.id, this.categoria, this.titulo, this.fechaInicio, this.fechaFin, this.puntuacion)
+  }
 }

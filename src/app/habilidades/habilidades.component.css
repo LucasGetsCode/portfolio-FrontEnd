@@ -7,5 +7,15 @@
 	align-items: baseline;
 	vertical-align: center;
 	font-size: 32px;
-	margin: 3px
+	margin: 0px 10px;
+}
+
+.boton-hab {
+	border: none;
+	background-color: transparent;
+	padding: 0px;
+}
+
+.imagen-hab {
+	margin: 0px;
 }
