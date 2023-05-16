@@ -31,7 +31,7 @@ export class InfoComponent implements OnInit {
 
   constructor(private service: AuthService, private apiService: ApiService) { // Antes es necesario poner al servicio en providers
     this.logged = service.logIn;
-    this.logged = true;
+    //this.logged = true;
   }
 
   ngOnInit(): void {

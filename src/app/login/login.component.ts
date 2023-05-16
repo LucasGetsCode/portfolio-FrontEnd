@@ -54,13 +54,17 @@ export class LoginComponent implements OnInit {
 
     if (this.form.valid) {
       //console.log(this.form.value)
-      alert("Todo salio bien ¡Enviar formuario!")
       // Llamamos a nuestro servicio para enviar los datos al servidor
       // También podríamos ejecutar alguna lógica extra
-      this.logged = true;
+      //this.logged = true;
+      this.username = this.Username.value
+      this.password = this.Password.value
+
+      this.Login()
+
     } else {
       //console.log("Mal")
-      console.log(this.form.value)
+      alert("Este formulario es incorrecto")
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template
       this.form.markAllAsTouched();
     }

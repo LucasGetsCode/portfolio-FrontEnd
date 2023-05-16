@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 
     constructor(private service: AuthService, private apiService: ApiService) {
       this.logged = service.logIn;
-      this.logged = true;
+      //this.logged = true;
     }
 
     datos: ManejarDatos[] = [];

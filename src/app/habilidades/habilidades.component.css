@@ -6,4 +6,6 @@
 	display: inline-block;
 	align-items: baseline;
 	vertical-align: center;
+	font-size: 32px;
+	margin: 3px
 }
