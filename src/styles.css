@@ -17,34 +17,6 @@ main {
 	vertical-align: -20%;
 }
 
-
-.banner {
-	display: block;
-	margin: auto;
-	border: 1px gray solid;
-	width: 85%;
-	height: 400px; 
-}
-
-.principal {
-	border-width: 2px;
-	border-color: gray;
-	border-style: double;
-	border-radius: 30px;
-	margin: 40px 100px;
-	padding: 10px;
-}
-
-.individual {
-	border: 2px lightgrey solid;
-	border-radius: 10px;
-	margin: 10px;
-}
-
-.individual * {
-	margin: 10px;
-}
-
 .titulo {
 	color:  black;
 	margin: 0px 50px;
