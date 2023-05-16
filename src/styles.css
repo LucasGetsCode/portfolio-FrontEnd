@@ -12,6 +12,10 @@ main {
   flex: 1 0 auto;
 }
 
+.individual * {
+	margin: 10px;
+}
+
 .social {
 	margin: 2px;
 	vertical-align: -20%;

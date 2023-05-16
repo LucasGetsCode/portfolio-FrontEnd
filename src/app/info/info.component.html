@@ -1,6 +1,6 @@
 <div>
     <div class="costados">
-        <h3 [ngStyle]="{'color': color}" *ngIf="!editable">{{titulo}}</h3>
+        <h3 *ngIf="!editable">{{titulo}}</h3>
         <input [(ngModel)]="titulo" *ngIf="editable">
 
         <p class="botones" *ngIf="!editable"><span>{{fechaInicio}}</span> - <span>{{fechaFin}}</span></p>

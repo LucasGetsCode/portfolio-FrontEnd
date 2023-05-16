@@ -4,8 +4,8 @@
         <input [(ngModel)]="titulo" *ngIf="editable">
 
         <div class="estrellas" *ngFor="let numero of [1,2,3,4,5]">
-            <p *ngIf="(puntuacion) >= numero.toString()">★</p>
-            <p *ngIf="(puntuacion) < numero.toString()">☆</p>
+            <span *ngIf="(puntuacion) >= numero.toString()">★</span>
+            <span *ngIf="(puntuacion) < numero.toString()">☆</span>
         </div>
         <input [(ngModel)]="puntuacion" *ngIf="editable">
         
